@@ -37,7 +37,7 @@ https://net-task.vercel.app/
 
 ---------------------------------------
 4-(login)
- to test all end-point'products without authorization..!
+ to test all product's end-point without authorization..!
 
  https://net-task.vercel.app/auth/login
 {
