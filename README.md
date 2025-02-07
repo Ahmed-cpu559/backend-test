@@ -8,7 +8,7 @@ https://net-task.vercel.app/
 # all end points 
 
 
-1- (signup)
+1- (signup)  --> POST
 
  https://net-task.vercel.app/auth/signup
 
@@ -19,7 +19,7 @@ https://net-task.vercel.app/
 }
 
 ---------------------------------------
-2- (configuration OTP)
+2- (configuration OTP)  --> POST
 
  https://net-task.vercel.app/auth/configuration/OTP
 
@@ -28,7 +28,7 @@ https://net-task.vercel.app/
 }
 
 ---------------------------------------
-3- (signin)
+3- (signin)  --> POST
 
  https://net-task.vercel.app/auth/signin
 
@@ -38,7 +38,7 @@ https://net-task.vercel.app/
 }
 
 ---------------------------------------
-4-(login)
+4-(login)  --> POST
  to test all product's end-point without authorization..!
 
  https://net-task.vercel.app/auth/login
@@ -55,7 +55,7 @@ https://net-task.vercel.app/
 #products end-points
 
 
-5-(add product) only admin
+5-(add product) only admin    --> POST
 
  https://net-task.vercel.app/products
 
@@ -69,7 +69,7 @@ headers should have token...
 }
 
 ---------------------------------------
-6- (get all)
+6- (get all)  --> GET
 
  https://net-task.vercel.app/products
  
@@ -80,7 +80,7 @@ headers should have token...
 }
 
 ---------------------------------------
-7- (get product) only admin
+7- (get product)  --> GET
 
  https://net-task.vercel.app/products/id
  
@@ -91,7 +91,7 @@ headers should have token...
 }
 
 ---------------------------------------
-8- (update product) only admin
+8- (update product) only admin   --> PATCH 
 
  https://net-task.vercel.app/products/id
  
@@ -102,7 +102,7 @@ headers should have token...
 }
 
 ---------------------------------------
-9- (delete product) only admin
+9- (delete product) only admin     --> DELETE 
 
  https://net-task.vercel.app/products/id
  
