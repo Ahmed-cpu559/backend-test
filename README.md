@@ -11,8 +11,8 @@ https://net-task.vercel.app/
  https://net-task.vercel.app/auth/signup
 
 {
-    "name": "name",
-    "email" : "emample@gmail.com",
+    "name": "example",
+    "email" : "example@gmail.com",
     "password": "123456789"
 }
 
@@ -31,7 +31,7 @@ https://net-task.vercel.app/
  https://net-task.vercel.app/auth/signin
 
 {
-    "email" : "emample@gmail.com",
+    "email" : "example@gmail.com",
     "password": "123456789"
 }
 
@@ -41,8 +41,8 @@ https://net-task.vercel.app/
 
  https://net-task.vercel.app/auth/login
 {
-    "name":"emaple",
-    "email": "example11@exm.com",
+    "name":"example",
+    "email": "example@exm.com",
     "password":"123456",
     "role": "admin",
     "confEmail": true
@@ -113,13 +113,16 @@ headers should have token...
 ---------------------------------------
 
 
-answer
+#To enhance database performance, we recommend the following optimizations:
 
-To enhance database performance, we recommend the following optimizations:
+1-Indexing – Proper indexing ensures faster queries and better retrieval efficiency.
 
-Indexing – Proper indexing ensures faster queries and better retrieval efficiency.
-Searching by ID – Always use ID-based searches instead of String-based searches, as string lookups are slower and consume more resources.
-Pagination – Instead of OFFSET, we should use Keyset Pagination for better performance in large datasets.
-Caching – Implementing Redis caching reduces frequent database queries, improving response time.
-Sharding – Splitting data across multiple databases enhances scalability and query efficiency.
-Partitioning – Dividing large tables into smaller partitions improves query performance and reduces lookup time.
+2-Searching by ID – Always use ID-based searches instead of String-based searches, as string lookups are slower and consume more resources.
+
+3-Pagination – Instead of OFFSET, we should use Keyset Pagination for better performance in large datasets.
+
+4-Caching – Implementing Redis caching reduces frequent database queries, improving response time.
+
+5-Sharding – Splitting data across multiple databases enhances scalability and query efficiency.
+
+6-Partitioning – Dividing large tables into smaller partitions improves query performance and reduces lookup time.
