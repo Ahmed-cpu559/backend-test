@@ -50,7 +50,7 @@ https://net-task.vercel.app/
 
 ---------------------------------------
 
-products end-points
+#products end-points
 
 
 5-(add product) only admin
