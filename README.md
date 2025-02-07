@@ -113,7 +113,7 @@ headers should have token...
 ---------------------------------------
 
 
-#To enhance database performance, we recommend the following optimizations:
+# To enhance database performance, we recommend the following optimizations:
 
 1-Indexing – Proper indexing ensures faster queries and better retrieval efficiency.
 
