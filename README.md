@@ -111,3 +111,15 @@ headers should have token...
 }
 
 ---------------------------------------
+
+
+answer
+
+To enhance database performance, we recommend the following optimizations:
+
+Indexing – Proper indexing ensures faster queries and better retrieval efficiency.
+Searching by ID – Always use ID-based searches instead of String-based searches, as string lookups are slower and consume more resources.
+Pagination – Instead of OFFSET, we should use Keyset Pagination for better performance in large datasets.
+Caching – Implementing Redis caching reduces frequent database queries, improving response time.
+Sharding – Splitting data across multiple databases enhances scalability and query efficiency.
+Partitioning – Dividing large tables into smaller partitions improves query performance and reduces lookup time.
