@@ -1,3 +1,5 @@
+i used atlas for database cloud   and vercel for production
+
 # test the api
 https://net-task.vercel.app/
 ---------------------------------------
