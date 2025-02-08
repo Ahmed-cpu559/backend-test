@@ -1,130 +1,168 @@
-i used atlas for database cloud   and vercel for production
+# Net Task API
 
-# test the api
+## Overview
+Net Task API is a cloud-based backend solution deployed on Vercel, using MongoDB Atlas as the database. This API provides authentication, authorization, and product management features.
+
+### Base URL:
+```
 https://net-task.vercel.app/
----------------------------------------
+```
 
+---
+## Authentication Endpoints
 
-# all end points 
-
-
-1- (signup)  --> POST
-
- https://net-task.vercel.app/auth/signup
-
+### 1. Sign Up - `POST /auth/signup`
+**Endpoint:**
+```
+https://net-task.vercel.app/auth/signup
+```
+**Request Body:**
+```json
 {
     "name": "example",
-    "email" : "example@gmail.com",
+    "email": "example@gmail.com",
     "password": "123456789"
 }
+```
 
----------------------------------------
-2- (configuration OTP)  --> POST
-
- https://net-task.vercel.app/auth/configuration/OTP
-
+### 2. Configure OTP - `POST /auth/configuration/OTP`
+**Endpoint:**
+```
+https://net-task.vercel.app/auth/configuration/OTP
+```
+**Request Body:**
+```json
 {
     "otp": "123456"
 }
+```
 
----------------------------------------
-3- (signin)  --> POST
-
- https://net-task.vercel.app/auth/signin
-
+### 3. Sign In - `POST /auth/signin`
+**Endpoint:**
+```
+https://net-task.vercel.app/auth/signin
+```
+**Request Body:**
+```json
 {
-    "email" : "example@gmail.com",
+    "email": "example@gmail.com",
     "password": "123456789"
 }
+```
 
----------------------------------------
-4-(login)  --> POST
- to test all product's end-point without authorization..!
-
- https://net-task.vercel.app/auth/login
+### 4. Login (Test Mode) - `POST /auth/login`
+**Endpoint:**
+```
+https://net-task.vercel.app/auth/login
+```
+**Request Body:**
+```json
 {
-    "name":"example",
+    "name": "example",
     "email": "example@exm.com",
-    "password":"123456",
+    "password": "123456",
     "role": "admin",
     "confEmail": true
 }
+```
 
----------------------------------------
+---
+## Product Management Endpoints
 
-#products end-points
-
-
-5-(add product) only admin    --> POST
-
- https://net-task.vercel.app/products
-
-headers should have token...
-
+### 5. Add Product (Admin Only) - `POST /products`
+**Endpoint:**
+```
+https://net-task.vercel.app/products
+```
+**Headers:** (Requires Authentication Token)
+```json
+{
+  "Authorization": "Bearer <token>"
+}
+```
+**Request Body:**
+```json
 {
   "name": "Laptop",
   "category": "Electronics",
   "price": 1500,
   "quantity": 10
 }
+```
 
----------------------------------------
-6- (get all)  --> GET
-
- https://net-task.vercel.app/products
- 
- headers should have token...
- 
+### 6. Get All Products - `GET /products`
+**Endpoint:**
+```
+https://net-task.vercel.app/products
+```
+**Headers:** (Requires Authentication Token)
+```json
 {
-
+  "Authorization": "Bearer <token>"
 }
+```
 
----------------------------------------
-7- (get product)  --> GET
-
- https://net-task.vercel.app/products/id
- 
- headers should have token...
- 
+### 7. Get a Product - `GET /products/:id`
+**Endpoint:**
+```
+https://net-task.vercel.app/products/:id
+```
+**Headers:** (Requires Authentication Token)
+```json
 {
-
+  "Authorization": "Bearer <token>"
 }
+```
 
----------------------------------------
-8- (update product) only admin   --> PATCH 
-
- https://net-task.vercel.app/products/id
- 
- headers should have token...
- 
+### 8. Update Product (Admin Only) - `PATCH /products/:id`
+**Endpoint:**
+```
+https://net-task.vercel.app/products/:id
+```
+**Headers:** (Requires Authentication Token)
+```json
+{
+  "Authorization": "Bearer <token>"
+}
+```
+**Request Body:**
+```json
 {
     "name": "Phone"
 }
+```
 
----------------------------------------
-9- (delete product) only admin     --> DELETE 
-
- https://net-task.vercel.app/products/id
- 
- headers should have token...
- 
+### 9. Delete Product (Admin Only) - `DELETE /products/:id`
+**Endpoint:**
+```
+https://net-task.vercel.app/products/:id
+```
+**Headers:** (Requires Authentication Token)
+```json
 {
-
+  "Authorization": "Bearer <token>"
 }
+```
 
----------------------------------------
+---
+## Database Performance Optimizations
+To enhance database performance, we implement the following best practices:
 
+1. **Indexing** – Proper indexing ensures faster queries and better retrieval efficiency.
+2. **Searching by ID** – Always use ID-based searches instead of string-based searches for efficiency.
+3. **Pagination** – Use Keyset Pagination instead of OFFSET for handling large datasets.
+4. **Caching** – Implement Redis caching to reduce frequent database queries and improve response time.
+5. **Sharding** – Distribute data across multiple databases for better scalability and performance.
+6. **Partitioning** – Divide large tables into smaller partitions to enhance query performance.
 
-# To enhance database performance, we recommend the following optimizations:
+---
+## Deployment
+- **Database:** MongoDB Atlas
+- **Hosting:** Vercel
 
-1-Indexing – Proper indexing ensures faster queries and better retrieval efficiency.
+For any issues, please open an issue on GitHub.
 
-2-Searching by ID – Always use ID-based searches instead of String-based searches, as string lookups are slower and consume more resources.
+---
+### Author
+Ahmed Abdel Nasser Mohamed
 
-3-Pagination – Instead of OFFSET, we should use Keyset Pagination for better performance in large datasets.
-
-4-Caching – Implementing Redis caching reduces frequent database queries, improving response time.
-
-5-Sharding – Splitting data across multiple databases enhances scalability and query efficiency.
-
-6-Partitioning – Dividing large tables into smaller partitions improves query performance and reduces lookup time.
